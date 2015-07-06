@@ -18,7 +18,7 @@ dependencies {
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    buildToolsVersion "23.0.0"
 	//key
 	signingConfigs {
 		myConfig{
