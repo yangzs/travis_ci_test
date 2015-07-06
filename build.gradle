@@ -64,7 +64,7 @@ android {
     }
 	
     //for .so files
-    task nativeLibsToJar(type: Tar, description: 'create a jar archive of the native libs') {
+    task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
 	    destinationDir file("$buildDir/native-libs")
 	    baseName 'native-libs'
 	    extension 'jar'
