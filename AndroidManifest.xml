@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yac.yacapp"
+    android:versionCode="1"
+    android:versionName="1.0.02" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    <!-- 蒲公英片配置 必选 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 获取设备信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.READ_LOGS" /> <!-- 获取logcat日志 -->
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 百度sdk -->
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
+    </uses-permission>
+    <!-- <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- 个推权限配置 -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="getui.permission.GetuiService.com.yac.yacapp"/>
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" /><!-- 解决百度云上的错误 -->
+	<!-- 自定义权限 -->
+	<permission
+	    android:name="getui.permission.GetuiService.com.yac.yacapp"
+	    android:protectionLevel="normal">
+	</permission>
+    
+    <application
+        android:name="com.yac.yacapp.icounts.App"
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden"
+        android:icon="@drawable/yac_icon"
+        android:label="@string/app_name"
+        android:theme="@style/Transparent" >
+
+        <!-- for baidu key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="NohEIhLkSQgCxWPT8TLQ3WER" /><!-- staging -->
+            <!-- android:value="nCWGin8BkacTfyuigRp8fVxH" release-->
+
+        <activity
+            android:name="com.yac.yacapp.activities.WelcomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.VerifyActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/AppTheme" 
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.SixServiceActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/Transparent"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.OrderDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" > <!-- 上面的设置：界面不被键盘顶上去。edittext获取焦点时，不会自动弹出虚拟键盘 -->
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.PlaceOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:theme="@style/Transparent"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MyCouponActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.PlaceOrderOKActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MyBaiduMapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.LocationDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.PickCarActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.BrandCategoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+			android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.CarModelActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.CarSettingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MyCarActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MyOrderPageActivity"
+            android:configChanges="orientation|keyboardHidden" 
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.yac.yacapp.activities.MyOrderDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>        
+        <activity
+            android:name="com.yac.yacapp.activities.MyOrderKeepersActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>   
+        <activity
+            android:name="com.yac.yacapp.activities.OrderServiceFlowActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>   
+        <activity
+            android:name="com.yac.yacapp.activities.OrderServiceFlowFragmentActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>          
+        <activity android:name="com.yac.yacapp.activities.ServiceFlowPicsViewPagerActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" 
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.yac.yacapp.activities.MyOrderRatingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.yac.yacapp.activities.CarPartsDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.yac.yacapp.activities.CarPartUpdateDataActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.yac.yacapp.activities.MyCheckReportsActivity"
+            android:configChanges="orientation|keyboardHidden" 
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>       
+        <activity android:name="com.yac.yacapp.activities.CheckReportsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>   
+        <activity android:name="com.yac.yacapp.activities.AddProductItemsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity> 
+        <activity android:name="com.yac.yacapp.activities.MyLocationActivity"
+            android:configChanges="orientation|keyboardHidden" 
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>         
+        <activity android:name="com.yac.yacapp.activities.UserBasicActivity"
+            android:configChanges="orientation|keyboardHidden" 
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>        
+        <!-- for location -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <!-- for zhifu -->
+        <activity
+            android:name="com.pingplusplus.android.PaymentActivity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.pingplusplus.android.PaymentActivity" />
+        
+        <!-- 个推配置的第三方参数属性 -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="NbDL3ROREH6F9XbYs6kLb7" />
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="vJDnQrAYu8929Qvc38GvuA" />
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="0bMk4z7tBsA2q2THBZF5e6" />
+        <meta-data
+            android:name="PUSH_GROUPID"
+            android:value="" />
+
+        <receiver
+            android:name="com.yac.yacapp.receiver.GetuiReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.NbDL3ROREH6F9XbYs6kLb7" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.yac.yacapp"
+            android:process=":pushservice" />
+        <!-- android:authorities="downloads.第三方包名" -->
+
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- 这个com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4固定，不能修改 -->
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <!-- android:name="com.igexin.sdk.action.第三方的appId" -->
+                <action android:name="com.igexin.sdk.action.NbDL3ROREH6F9XbYs6kLb7" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+
+        <!-- 个推SDK配置结束 -->
+        
+    </application>
+
+</manifest>

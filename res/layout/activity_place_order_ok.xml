@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/action_bar" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/include1"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/congratulation_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="恭喜你,下单成功！"
+        android:textSize="@dimen/text_bigx" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/congratulation_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_15dim"
+        android:src="@drawable/gou" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/congratulation_TV"
+        android:layout_marginBottom="@dimen/margin_5dim"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/margin_15dim"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/contact_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="稍后我们客服将与你联系"
+        android:textColor="@color/black_text2" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/contact_tv"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/margin_15dim"
+        android:background="@color/line_color" />
+
+    <Button
+        android:id="@+id/close_btn"
+        style="@style/myBottomButtom_style"
+        android:layout_below="@+id/line2"
+        android:layout_marginTop="@dimen/margin_top_dim"
+        android:text="关闭" />
+
+</RelativeLayout>

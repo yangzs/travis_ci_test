@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/head_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/action_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_15dim"
+        android:layout_marginLeft="@dimen/margin_10dim"
+        android:layout_marginRight="@dimen/margin_10dim"
+        android:layout_marginTop="@dimen/margin_15dim"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/name_et"
+            style="@style/myEditText_style"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_marginRight="@dimen/layout_margin"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:layout_weight="3"
+            android:hint="姓名"
+            android:inputType="text"
+            android:textColorHint="@color/text_hint_color" >
+
+            <requestFocus />
+        </EditText>
+
+        <RadioGroup
+            android:id="@+id/user_basic_radiogroup"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/action_bar_height"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/man_radiobtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_toggleradio_buttom"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="先生"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_middle" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/women_radiobtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_toggleradio_buttom"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="女士"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_middle" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/user_phone_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10dim"
+        android:textColor="@color/black_text1"
+        android:textSize="@dimen/text_smallLL" />
+
+    <TextView
+        android:id="@+id/warn_text_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10dim"
+        android:text="如需修改电话号码，请拨打400-0102-766"
+        android:textColor="@color/black_text2"
+        android:textSize="@dimen/text_small" />
+
+    <Button
+        android:id="@+id/commit_bt"
+        style="@style/myBottomButtom_style"
+        android:text="提交" />
+
+</LinearLayout>

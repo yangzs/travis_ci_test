@@ -1,0 +1,132 @@
+<resources>
+
+    <!-- <style name="AppBaseTheme" parent="android:style/Theme.Holo.Light"></style> -->
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Transparent" parent="AppTheme">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="myEditText_style">
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:layout_height">36dp</item>
+        <!-- <item name="android:layout_marginTop">10dp</item> -->
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">#AAAAAA</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="myEditText_stroke_style">
+        <item name="android:background">@drawable/bg_edittext_stroke</item>
+        <item name="android:layout_height">36dp</item>
+        <!-- <item name="android:layout_marginTop">10dp</item> -->
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">#AAAAAA</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="myButtom_style">
+        <item name="android:background">@drawable/bg_buttom</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_big</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="myBottomButtom_style">
+        <item name="android:background">@drawable/bg_buttom</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_big</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginLeft">@dimen/margin_10dim</item>
+        <item name="android:layout_marginRight">@dimen/margin_10dim</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5dim</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tipsdialog_style" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="MyProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="toggleradiobutton_style">
+        <item name="android:background">@drawable/bg_toggleradio_buttom</item>
+        <item name="android:textSize">@dimen/text_middle</item>
+    </style>
+
+    <style name="popup_alpha_anim">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_enter</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
+    </style>
+    <style name="popup_bottom_translate_anim">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_translate_enter</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_translate_exit</item>
+    </style>
+
+    <style name="popup_translate_bottom_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
+    <style name="mytoast_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/mytoast_enter</item>
+        <item name="android:windowExitAnimation">@anim/mytoast_exit</item>
+    </style>
+
+    <style name="mypopup_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_enter</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
+    </style>
+
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_drawable</item>
+        <item name="android:minHeight">20dip</item>
+    </style>
+
+    <style name="anim_popup_dir">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
+    <style name="activity_bg_style">
+        <item name="android:background">@color/white</item>
+    </style>
+
+</resources>

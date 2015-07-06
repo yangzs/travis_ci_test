@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/place_order_ll"
+    style="@style/activity_bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/action_bar" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_1"
+        android:padding="@dimen/margin_10dim"
+        android:text="@string/place_order_tishi"
+        android:textColor="@color/black_text2"
+        android:textSize="@dimen/text_middle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="姓名"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <EditText
+            android:id="@+id/order_name_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入姓名.."
+            android:inputType="text"
+            android:textColor="@color/black_text1"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="@dimen/text_middle" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="手机"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <EditText
+            android:id="@+id/phone_num_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入手机号码.."
+            android:inputType="phone"
+            android:textColor="@color/black_text1"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="@dimen/text_middle" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="接车时间"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <RelativeLayout
+            android:id="@+id/pick_time_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/pick_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/pick_time_img"
+                android:text="正在加载接车时间.."
+                android:textColor="@color/black_text1"
+                android:textSize="@dimen/text_middle" />
+
+            <ImageView
+                android:id="@+id/pick_time_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/calendar" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="接车地址"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <RelativeLayout
+            android:id="@+id/pick_address_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/pick_address_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/pick_address_img"
+                android:gravity="center_vertical"
+                android:textColor="@color/black_text1"
+                android:textSize="@dimen/text_middle" />
+
+            <!--
+                 <EditText
+                android:id="@+id/pick_address_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/pick_address_img"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:textColor="@color/black_text1"
+                android:textColorHint="@color/text_hint_color"
+                android:textSize="@dimen/text_middle" />
+            -->
+
+            <ImageView
+                android:id="@+id/pick_address_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/location" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="使用优惠券"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <RelativeLayout
+            android:id="@+id/coupon_code_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/coupon_code_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_10dim"
+                android:layout_toLeftOf="@+id/coupon_code_img"
+                android:text="0张可用"
+                android:textColor="@color/black_text1"
+                android:textSize="@dimen/text_middle" />
+
+            <ImageView
+                android:id="@+id/coupon_code_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="支付方式"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <RadioGroup
+            android:id="@+id/place_order_radiogroup"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/action_bar_height"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/zfb_radiobtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_toggleradio_buttom"
+                android:button="@null"
+                android:gravity="center"
+                android:text="支付宝"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_middle" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/offline_radiobtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_toggleradio_buttom"
+                android:button="@null"
+                android:gravity="center"
+                android:text="线下支付"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_middle" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10dim" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="备注"
+            android:textColor="@color/black_text2"
+            android:textSize="@dimen/text_middle" />
+
+        <EditText
+            android:id="@+id/order_comment_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="无则留空.."
+            android:inputType="text"
+            android:textColor="@color/black_text1"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="@dimen/text_middle" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/splite_line" />
+
+    <Button
+        android:id="@+id/place_order_btn"
+        style="@style/myBottomButtom_style"
+        android:layout_marginTop="@dimen/margin_top_dim"
+        android:text="确定"/>
+
+</LinearLayout>

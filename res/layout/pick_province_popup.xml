@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <!-- <com.yac.yacapp.views.MyPickerView
+        android:id="@+id/pick_province_pv"
+        android:layout_width="50dp"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_white_toggleradio_buttom_normal" /> -->
+        
+        <GridView 
+            android:id="@+id/province_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="7"
+            ></GridView>
+</LinearLayout>

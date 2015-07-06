@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/coupon_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/couponsbackground1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5" >
+
+            <TextView
+                android:id="@+id/coupon_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_middle" />
+
+            <TextView
+                android:id="@+id/coupon_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small" />
+
+            <TextView
+                android:id="@+id/coupon_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="$390"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_bigx" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3" >
+
+            <TextView
+                android:id="@+id/coupon_status_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="已用" />
+
+            <ImageView
+                android:id="@+id/item_hook_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/coupon_status_tv"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/hook"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/expired_time_tv"
+                android:text="有效时间"
+                android:textColor="@color/black_text2" />
+
+            <TextView
+                android:id="@+id/expired_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:text="2014.06.02前" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

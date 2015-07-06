@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res/com.yac.yacapp"
+    android:id="@+id/carpart_detail_rll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_rll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_marginLeft="@dimen/margin_15dim"
+        android:layout_marginRight="@dimen/margin_15dim"
+        android:background="@color/transparent" >
+
+        <TextView
+            android:id="@+id/beijing_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:drawableRight="@drawable/down_arrow_white"
+            android:gravity="center_vertical"
+            android:text="@string/beijing_str"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_smallL"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/scan_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_left_dim"
+            android:src="@drawable/scan"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/actionbar_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_big"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@id/top_rll" >
+
+        <com.yac.yacapp.views.RoundProgressBar4Arc
+            android:id="@+id/roundProgressBar3"
+            android:layout_width="235dp"
+            android:layout_height="235dp"
+            android:layout_centerHorizontal="true"
+            android_custom:roundColor="@color/transparent_2"
+            android_custom:roundProgressColor="@color/white"
+            android_custom:roundWidth="16dip"
+            android_custom:textIsDisplayable="true"
+            android_custom:textSize="@dimen/text_maxXX" />
+
+        <TextView
+            android:id="@+id/car_licence_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_5dim"
+            android:layout_centerHorizontal="true"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_big" />
+
+        <TextView
+            android:id="@+id/fen_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="110dp"
+            android:text="分"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_middle" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/car_details_btn"
+        style="@style/myButtom_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/framelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/partcar_details_buttom"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="查看部件详情"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_middle" />
+
+</RelativeLayout>

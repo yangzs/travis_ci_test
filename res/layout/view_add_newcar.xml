@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res/com.yac.yacapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:background="@color/transparent" />
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@id/view" >
+
+        <!--
+             <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/home_big_ring_none" />
+        -->
+
+        <com.yac.yacapp.views.RoundProgressBar4Arc
+            android:layout_width="235dp"
+            android:layout_height="235dp"
+            android:layout_gravity="center_horizontal"
+            android_custom:roundColor="@color/transparent_2"
+            android_custom:roundWidth="16dip"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/add_image"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:src="@drawable/selector_add_big" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_20dim"
+                android:text="请添加您的爱车"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/text_middle"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/framelayout"
+        android:src="@drawable/home_car" />
+
+</RelativeLayout>

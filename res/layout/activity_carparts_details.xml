@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/action_bar" />
+
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/include1"
+        android:background="@color/line_color" />
+
+    <ListView
+        android:id="@+id/order_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/book_now_btn"
+        android:layout_below="@+id/split_line"
+        android:divider="@color/page_bg"
+        android:dividerHeight="15dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/book_now_btn"
+        style="@style/myBottomButtom_style"
+        android:layout_alignParentBottom="true"
+        android:text="立即预约" />
+
+</RelativeLayout>
