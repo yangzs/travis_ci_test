@@ -18,4 +18,5 @@ before_script:
   
 
 #script: ./gradlew connectedAndroidTest
-script: ./gradlew clean build connectedCheck
+#script: ./gradlew clean build connectedCheck
+script : ./gradlew build connectedCheck
