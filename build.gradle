@@ -64,6 +64,10 @@ android {
 	    }
     }
 	
+	lintOptions {
+          abortOnError false
+    }
+	  
     //for .so files
     task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
 	    destinationDir file("$buildDir/native-libs")
