@@ -3,7 +3,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.+'
+        //classpath 'com.android.tools.build:gradle:0.5.+'
+		classpath 'com.android.tools.build:gradle:1.2.2'
     }
     //乱码
 	tasks.withType(JavaCompile) { options.encoding = "UTF-8" }  
@@ -12,12 +13,12 @@ apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
-    //compile fileTree(dir: "$buildDir/native-libs", include: 'native-libs.jar')
+    compile fileTree(dir: "$buildDir/native-libs", include: 'native-libs.jar')
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.0.0"
 	//key
 	signingConfigs {
 		myConfig{
@@ -40,7 +41,7 @@ android {
         versionCode 1
         versionName "1.01"
         minSdkVersion 11
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
 	//文件
     sourceSets {
@@ -64,16 +65,15 @@ android {
     }
 	
     //for .so files
-    //task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
-	//    destinationDir file("$buildDir/native-libs")
-	//    baseName 'native-libs'
-	//    extension 'jar'
-	//    from fileTree(dir: 'libs', include: '**/*.so')
-	//    into 'lib/'
-	//}
+    task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
+	    destinationDir file("$buildDir/native-libs")
+	    baseName 'native-libs'
+	    extension 'jar'
+	    from fileTree(dir: 'libs', include: '**/*.so')
+	    into 'lib/'
+	}
 	
-	//tasks.withType(Compile) {
-	//    compileTask -> compileTask.dependsOn(nativeLibsToJar)
-	//} 
-	
+	tasks.withType(Compile) {
+	    compileTask -> compileTask.dependsOn(nativeLibsToJar)
+	} 
 }
