@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.5.+'
-		//classpath 'com.android.tools.build:gradle:0.12.+'
     }
     //乱码
 	tasks.withType(JavaCompile) { options.encoding = "UTF-8" }  
@@ -18,7 +17,7 @@ dependencies {
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "21.0.0"
+    buildToolsVersion "19.0.0"
 	//key
 	signingConfigs {
 		myConfig{
