@@ -1,29 +1,19 @@
 language: android
-jdk: oraclejdk7
-env:
-  matrix:
-    - ANDROID_TARGET=android-21  ANDROID_ABI=armeabi-v7a
-
 android:
-  components:
-    - build-tools-21.0.0
+   components:
+   - platform-tools
+   - android-22
+   - build-tools-22.0.1
+   - extra
+
+jdk: oraclejdk7
+
+notifications:
+  email: false
 
 before_install:
-# Gradle
-- wget http://services.gradle.org/distributions/gradle-1.6-bin.zip
-- unzip gradle-1.6-bin.zip
-- export GRADLE_HOME=$PWD/gradle-1.6
-- export PATH=$GRADLE_HOME/bin:$PATH
+  - sudo apt-get update -qq
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null; fi
 
-before_script:
-  # Create and start emulator
-  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-  - chmod +x gradlew
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - adb wait-for-device
-  - adb shell input keyevent 82 &
-  
-
-#script: ./gradlew connectedAndroidTest
-#script: ./gradlew clean build connectedCheck
-script : ./gradlew build connectedCheck
+script:
+  - ./gradlew clean build
