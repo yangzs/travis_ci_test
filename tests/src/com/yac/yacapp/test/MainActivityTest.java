@@ -26,7 +26,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<VerifyAct
 		super.tearDown();
 	}
 
-	@LargeTest
 	public void testChangeText() throws Exception{
 		System.out.println("MainActivityTest  testChangeText is run.");
 		assertTrue(true);
